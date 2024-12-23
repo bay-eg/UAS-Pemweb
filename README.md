@@ -5,11 +5,11 @@ Proyek ini adalah aplikasi berbasis web yang memungkinkan pengguna untuk mengisi
 Struktur Proyek
 graphql
 Copy code
-/
-├── index.php            # Halaman utama dengan form input
-├── styles.css           # File CSS untuk styling halaman
-├── script.js            # File JavaScript untuk manipulasi DOM dan event handling
-└── README.md            # File ini (penjelasan proyek)
+
+index.php
+styles.css
+script.js
+README.md
 
 -aplikasi memiliki form dengan 4 elemen input:
 
