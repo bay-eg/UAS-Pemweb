@@ -52,3 +52,37 @@ CREATE TABLE fans (
     ip_address VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+```
+## Koneksi ke Database
+Koneksi ke database menggunakan PDO:
+
+```php
+$pdo = new PDO("mysql:host=$host;dbname=$db;charset=$charset", $user, $pass, $options);
+```
+Data yang diinputkan pengguna disimpan menggunakan SQL INSERT query dalam tabel fans. Pengguna dapat melihat data yang telah dimasukkan pada halaman data.php setelah proses submit.
+##Sesion Management
+## Session Management
+Fungsi `session_start()` digunakan untuk memulai sesi, dan informasi pengguna disimpan dalam session untuk memberikan pesan setelah data berhasil disubmit. Pesan ini akan ditampilkan di halaman `data.php` menggunakan PHP `$_SESSION`:
+
+```php
+if (isset($_SESSION['message'])) {
+    echo $_SESSION['message'];
+    unset($_SESSION['message']);
+}
+```
+## Instalasi dan Penggunaan
+
+1. **Unduh atau Clone Repository**: Unduh atau clone repositori dari GitHub.
+2. **Buat Database**: Jalankan SQL script untuk membuat tabel di MySQL:
+
+    ```sql
+    CREATE DATABASE rimuru_fans;
+    ```
+
+3. **Konfigurasi Koneksi Database**: Sesuaikan detail koneksi database pada file `index.php` dan `data.php` jika diperlukan.
+4. **Jalankan Aplikasi**: Buka file `index.php` di browser untuk mengisi form, dan data akan ditampilkan di halaman `data.php` setelah submit.
+
+## Penutup
+
+Proyek ini adalah contoh pengembangan aplikasi web dengan menggabungkan berbagai teknik pemrograman sisi klien dan server menggunakan HTML, JavaScript, PHP, dan MySQL.
+
